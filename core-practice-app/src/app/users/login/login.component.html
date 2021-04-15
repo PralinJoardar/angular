@@ -1,0 +1,40 @@
+<div>
+  <p
+    #myP
+    style="background-color: aqua; text-align: center"
+    (click)="hoverEvent()"
+  >
+    Input Here
+  </p>
+  <br />
+  <input type="text" #myInp (keyup.enter)="onInput(myInp.value)" />
+  <br />
+  <hr />
+  <input type="text" #myInp2 />
+  <br />
+  <br />
+  <button (click)="inp2val(myInp2.value)">click !</button>
+  <br />
+  <br />
+  <input type="text" [(ngModel)]="inp3data" />
+  <button (click)="inp3display()">Click!</button>
+  <p *ngIf="flag == true; then trueBlock; else falseBlock">true</p>
+  <ng-template #trueBlock>true</ng-template>
+  <ng-template #falseBlock>false</ng-template>
+  <br />
+  <br />
+  <label for="">enter color</label>
+  <input type="text" [(ngModel)]="color" />
+  <button (click)="setColorM()">enter</button>
+  <ng-template [ngIf]="setColor == 'red'"> red color selected </ng-template>
+  <ng-template [ngIf]="setColor == 'blue'"> blue color selected </ng-template>
+
+  <ng-template [ngIf]="setColor == ''"> No color selected </ng-template>
+
+  <ng-template [ngIf]="setColor !== '' || 'blue' || 'red'"> enter valid colors</ng-template>
+</div>
+
+<div [ngSwitch]='setColor'>
+    <p *ngSwitchCase="'red'" style="color: red;">red color</p>
+    <p *ngSwitchCase="''">No color</p>
+</div>

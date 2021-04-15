@@ -1,0 +1,16 @@
+<p>Warning</p>
+<button class="btn btn-primary" [disabled]="!flag" (click)="datachange()">
+  click : {{ flag }}
+</button>
+<p>Status: {{data}}</p>
+<input type="text" [(ngModel)]="inputData">
+<br />
+<br />
+<p>{{inputData}}</p>
+<hr />
+<input type="text" [(ngModel)]="myData">
+<p *ngIf="btnFlag; else nodata">{{myData}}</p>
+<button class="btn btn-warning" [disabled]="myData === ''" (click)="handleBtnClick()">submit</button>
+<ng-template #nodata>
+  <p>No data</p>
+</ng-template>

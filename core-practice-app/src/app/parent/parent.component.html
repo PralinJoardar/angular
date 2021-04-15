@@ -1,0 +1,7 @@
+<div *ngFor="let item of user">
+  <app-child [data]="item" (getMyData)="getData($event)"></app-child>
+</div>
+<div *ngFor = "let item of data">
+    <p>{{item.id}}</p>
+    <p>{{item.name}}</p>
+</div>

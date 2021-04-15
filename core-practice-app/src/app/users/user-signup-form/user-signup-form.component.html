@@ -1,0 +1,37 @@
+<div style="margin: auto; width: 50%">
+  <h3 [style.color]="error ? 'orange' : 'blue'">Registration Form</h3>
+  <h4 [style.backgroundColor]="error ? 'red' : 'green'">Errors</h4>
+  <button class="btn-sm btn-secondary" (click)="changeErrorStatus()">
+    Toggle Error Status
+  </button>
+  <br />
+  <br />
+  <form #myForm="ngForm" (ngSubmit)="handleSubmit(myForm.value)">
+    <label for="fName">First Name</label>
+    <br />
+    <input type="text" name="firstName" ngModel />
+    <br />
+    <label for="lName">Last Name</label>
+    <br />
+    <input type="text" name="lastName" ngModel />
+    <br />
+    <label for="address">Address</label>
+    <br />
+    <input type="text" name="address" ngModel />
+    <br />
+    <label for="contact">Contact</label>
+    <br />
+    <input type="number" name="contact" ngModel />
+    <br />
+    <label for="email">Email</label>
+    <br />
+    <input type="email" name="email" ngModel />
+    <br />
+    <label for="email">Password</label>
+    <br />
+    <input type="password" name="password" ngModel />
+    <br />
+    <br />
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>

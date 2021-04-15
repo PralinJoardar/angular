@@ -1,0 +1,21 @@
+<h1>User Component!</h1>
+<hr>
+<div *ngFor="let item of data">
+  <p>Id: {{item.id}}</p>
+  <p>Name: {{item.name | titlecase}}</p>
+  <p>Age: {{item.age}}</p>
+  <hr>
+</div>
+<h1>User Data from Api</h1>
+<table border="1">
+<tr>
+    <td>Id</td>
+    <td>Title</td>
+    <td>User Id</td>
+</tr>
+<tr *ngFor="let item of userData">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.userId}}</td>
+</tr>
+</table>

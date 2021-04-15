@@ -1,0 +1,37 @@
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="collectData()">
+    <input
+      type="text"
+      name="email"
+      formControlName="email"
+      placeholder="Enter User Name"
+    />
+    <br />
+    <small class="error" *ngIf="email.invalid && email.touched"
+      >email is not valid !</small
+    >
+    <br /><br />
+    <input
+      type="text"
+      name="password"
+      formControlName="password"
+      placeholder="Enter password"
+    /><br />
+    <small class="error" *ngIf="password.invalid && password.touched"
+      >password is not valid !</small
+    >
+    <br /><br />
+    <input
+      type="text"
+      name="address"
+      formControlName="address"
+      placeholder="Enter address"
+    />
+    <br>
+    <small class="error" *ngIf="address.invalid && address.touched"
+      >address is not valid !</small
+    >
+    <br /><br />
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
